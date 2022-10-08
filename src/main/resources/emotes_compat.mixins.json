@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.kosmx.emotesCompat.rp.mixin",
+  "plugin": "dev.kosmx.emotesCompat.rp.init.MixinPlugin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

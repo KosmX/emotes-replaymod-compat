@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "emotes-compat-rp",
+  "version": "${version}",
+  "name": "Emotecraft compatibility layer",
+  "description": "Lorem ipsum dolor sit amet lorem sit enim invidunt diam sea accusam at imperdiet liber imperdiet",
+  "authors": [
+    "KosmX"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [],
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "dev.kosmx.emotesCompat.rp.ClientInitKt::initializeClient"
+      }
+    ],
+    "modmenu": []
+  },
+  "mixins": [
+    "emotes_compat.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}
