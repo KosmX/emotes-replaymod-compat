@@ -17,7 +17,7 @@ var currentId: UUID? = null
 fun saveC2SEmotePacket(emoteData: KeyframeAnimation?, player: UUID) {
     if (MinecraftClient.getInstance().player?.uuid == player && emoteData != null) {
         currentId = emoteData.uuid
-        ReplayModRecording.instance.connectionEventHandler.packetListener.save(
+        ReplayModRecording.instance?.connectionEventHandler?.packetListener?.save(
             EmotePacket.Builder()
                 .configureToStreamEmote(emoteData, player)
                 .build().write().let { emotePacket ->
@@ -32,7 +32,7 @@ fun saveC2SEmotePacket(emoteData: KeyframeAnimation?, player: UUID) {
 fun saveC2SStopPacket() {
     val player = MinecraftClient.getInstance().player?.uuid
     if (MinecraftClient.getInstance().player?.isMainPlayer == true && player != null)
-    ReplayModRecording.instance.connectionEventHandler.packetListener.save(
+    ReplayModRecording.instance?.connectionEventHandler?.packetListener?.save(
         EmotePacket.Builder()
             .configureToSendStop(currentId, player)
             .build().write().let {
