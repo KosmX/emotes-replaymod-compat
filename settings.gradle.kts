@@ -15,4 +15,4 @@ pluginManagement {
 }
 
 
-rootProject.name = "rp_test"
+rootProject.name = "emotes_replay_compat"
