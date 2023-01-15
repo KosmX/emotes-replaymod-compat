@@ -1,7 +1,7 @@
 plugins {
-    kotlin("jvm") version "1.7.20"
+    kotlin("jvm") version "1.8.0"
     id("fabric-loom") version "1.0-SNAPSHOT"
-    id("io.github.juuxel.loom-quiltflower") version "1.7.+"
+    id("io.github.juuxel.loom-quiltflower") version "1.8.+"
     id("maven-publish")
 }
 
