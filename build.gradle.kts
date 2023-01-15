@@ -52,7 +52,7 @@ dependencies {
 
     modImplementation("maven.modrinth:replaymod:${project.properties["replaymod"]}")
 
-    modLocalRuntime("maven.modrinth:emotecraft:${project.properties["emotecraft"]}-MC1.19.2-fabric")
+    modLocalRuntime("maven.modrinth:emotecraft:${project.properties["emotecraft"]}+${project.property("minecraft_version")}-fabric")
 }
 
 base {
