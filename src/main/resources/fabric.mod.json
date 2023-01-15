@@ -20,9 +20,7 @@
     ],
     "modmenu": []
   },
-  "mixins": [
-    "emotes_compat.mixins.json"
-  ],
+  "mixins": [],
   "depends": {
     "fabricloader": ">=0.14.9",
     "fabric": "*",
