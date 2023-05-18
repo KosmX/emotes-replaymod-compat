@@ -8,15 +8,15 @@ plugins {
 version = project.properties["mod_version"].toString()
 group = project.properties["maven_group"].toString()
 
-java.sourceCompatibility = JavaVersion.VERSION_17
-java.targetCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.targetCompatibility = JavaVersion.VERSION_1_8
 
 
 loom {
     // Split minecraft sources
     //splitEnvironmentSourceSets()
 
-    runtimeOnlyLog4j.set(true)
+    //runtimeOnlyLog4j.set(true)
 }
 
 repositories {
@@ -45,17 +45,26 @@ dependencies {
     modImplementation("net.fabricmc:fabric-language-kotlin:${project.properties["fabric_kotlin"]}")
 
     // We might want advanced player animations
-    modImplementation("dev.kosmx.player-anim:player-animation-lib-fabric:${project.properties["player_anim"]}")
+    modImplementation("dev.kosmx.player-anim:player-animation-lib-fabric:${project.properties["player_anim"]}") {
+        isTransitive = false
+    }
 
-    modLocalRuntime("com.terraformersmc:modmenu:${project.properties["mod_menu"]}")
+    modLocalRuntime("com.terraformersmc:modmenu:${project.properties["mod_menu"]}"){
+        isTransitive = false
+    }
     modApi("me.shedaniel.cloth:cloth-config-fabric:${project.properties["cloth_config"]}") {
-        exclude(group = "net.fabricmc.fabric-api")
+        //exclude(group = "net.fabricmc.fabric-api")
+        isTransitive = false
     }
     compileOnly("io.github.kosmx.emotes:emotesMain:${project.properties["emotecraft"]}")
 
-    modImplementation("maven.modrinth:replaymod:${project.properties["replaymod"]}")
+    modImplementation("maven.modrinth:replaymod:${project.properties["replaymod"]}"){
+        isTransitive = false
+    }
 
-    modLocalRuntime("maven.modrinth:emotecraft:${project.properties["emotecraft"]}-MC1.19.2-fabric")
+    modLocalRuntime("maven.modrinth:emotecraft:${project.properties["emotecraft"]}+1.16.5-fabric"){
+        isTransitive = false
+    }
 }
 
 base {
@@ -64,7 +73,7 @@ base {
 
 kotlin {
     target {
-        jvmToolchain(17)
+        jvmToolchain(8)
     }
 }
 

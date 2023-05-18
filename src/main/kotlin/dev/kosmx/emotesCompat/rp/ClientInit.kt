@@ -1,12 +1,12 @@
 package dev.kosmx.emotesCompat.rp
 
 import io.github.kosmx.emotes.api.events.client.ClientEmoteEvents
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
+import org.apache.logging.log4j.LogManager
+import org.apache.logging.log4j.Logger
 
 const val MODID: String = "emotes-compat-rp"
 
-val LOGGER: Logger by lazy { LoggerFactory.getLogger(MODID) }
+val LOGGER: Logger by lazy { LogManager.getLogger(MODID) }
 
 fun initializeClient() {
     LOGGER.info("Hello Fabric")
